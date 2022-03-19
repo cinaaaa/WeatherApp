@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   weather: [],
   loading: false,
+  error: null,
 }
 
 export const weatherSlice = createSlice({
@@ -15,10 +16,13 @@ export const weatherSlice = createSlice({
         changeLoading: (state, action) => {
           state.loading = action.payload;
         },
+        setError: (state, action) => {
+          state.error = action.payload;
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setWeatherData, changeLoading } = weatherSlice.actions;
+export const { setWeatherData, changeLoading, setError } = weatherSlice.actions;
 
 export default weatherSlice.reducer;

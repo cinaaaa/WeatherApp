@@ -25,7 +25,8 @@ const SearchBarContainer = () => {
 
             <View style={styles.oneThird}>
                 <ButtonComponent 
-                    title='Search' 
+                    title='Search'
+                    disabled={Boolean(!city)}
                     onPressTrigged={() => dispatch( fetch_weather(city) )}
                     loading={loading}
                 />

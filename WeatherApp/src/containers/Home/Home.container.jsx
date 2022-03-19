@@ -1,16 +1,20 @@
 import SearchBarContainer from "../SearchBar/SearchBar.container";
 import WeatherResultContainer from "../WeatherResult/WeatherResult.container";
+import ErrorComponent from "../../components/Errors/Errors.component";
 
 import { useSelector } from "react-redux";
 
 const HomeContainer = () => {
 
-    const weather = useSelector(state => state.weather.weather);
+    const weather = useSelector(state => state.weather);
 
     return (
         <>
             <SearchBarContainer />
-            <WeatherResultContainer weatherData={weather} />
+
+            <ErrorComponent condition={weather.error} />
+
+            <WeatherResultContainer weatherData={weather.weather} />
         </>
     );
 };

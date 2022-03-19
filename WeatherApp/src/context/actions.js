@@ -1,6 +1,6 @@
 import { get_coordinates,get_weathers } from "../api";
 
-import { changeLoading, setWeatherData } from "./weatherSlice";
+import { changeLoading, setWeatherData, setError } from "./weatherSlice";
 
 
 export const fetch_weather = (city) => async dispatch => {
@@ -9,7 +9,8 @@ export const fetch_weather = (city) => async dispatch => {
     dispatch(changeLoading(true));
     // remove last data
     dispatch(setWeatherData([]));
-
+    // remove last error
+    dispatch(setError(""));
 
     // fetch the city coords first
     // then if we have coords we can fetch
@@ -26,7 +27,17 @@ export const fetch_weather = (city) => async dispatch => {
             dispatch(setWeatherData(weather_data.data.daily.slice(0, 4)));
             // hide loading
             dispatch(changeLoading(false));
+        }
+        else {
+           dispatch(setError('No result found : ('));
+           // hide loading
+           dispatch(changeLoading(false));
         };
 
+    }
+    else {
+        dispatch(setError('No result found : ('));
+        // hide loading
+        dispatch(changeLoading(false));
     };
 };

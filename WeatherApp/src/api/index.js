@@ -11,7 +11,7 @@ export const get_coordinates = async (city) => {
         const response = await axios.get(`${GEO_URL}?q=${city}&appid=${token}`);
         return response;
     } catch (error) {
-        console.error(error);
+        return null;
     };
 };
 
@@ -19,9 +19,8 @@ export const get_weathers = async (lat, lon) => {
     // get the lat & lng current weather condition
     try {
         const response = await axios.get(`${DATA_URL}?lat=${lat}&lon=${lon}&appid=${token}`);
-        console.log(response)
         return response;
     } catch (error) {
-        console.error(error);
+        return null;
     };
 };

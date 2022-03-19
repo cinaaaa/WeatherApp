@@ -3,9 +3,10 @@ import { StyleSheet,Text,Pressable,ActivityIndicator } from "react-native";
 const ButtonComponent = ({
     onPressTrigged,
     title,
-    loading
+    loading,
+    disabled,
 }) => (
-    <Pressable style={styles.button} onPress={onPressTrigged}>
+    <Pressable disabled={disabled} style={disabled ? styles.buttonDisabled : styles.button} onPress={onPressTrigged}>
         { loading &&
             <ActivityIndicator color='white' />
         }
@@ -25,6 +26,15 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         elevation: 3,
         backgroundColor: 'black',
+    },
+    buttonDisabled: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 40,
+        borderRadius: 4,
+        elevation: 3,
+        backgroundColor: 'black',
+        opacity: 0.5
     },
     text: {
         fontSize: 16,
