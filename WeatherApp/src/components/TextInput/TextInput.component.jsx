@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { StyleSheet, TextInput } from "react-native";
 
 const TextInputComponent = ({
@@ -6,14 +6,12 @@ const TextInputComponent = ({
   onChangeCity
 }) => {
   return (
-    <>
       <TextInput
         style={styles.input}
         onChangeText={onChangeCity}
         value={city}
         placeholder="Search for a city..."
       />
-    </>
   );
 };
 
