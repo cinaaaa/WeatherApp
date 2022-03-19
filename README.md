@@ -6,7 +6,7 @@ Simple weather app to fetch 4 day weather stat & show them in a proper way
 # Structure
 
 ##### .Containers
-Is its name, Its contains multiple component & handle their side effects
+As its name, Contains multiple component & handle their side effects
 
 ##### .Components
 It's our atoms or components
