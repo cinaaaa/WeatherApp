@@ -1,4 +1,4 @@
-import { StyleSheet,Text,Pressable } from "react-native";
+import { StyleSheet,Text,Pressable,ActivityIndicator } from "react-native";
 
 const ButtonComponent = ({
     onPressTrigged,
@@ -7,9 +7,7 @@ const ButtonComponent = ({
 }) => (
     <Pressable style={styles.button} onPress={onPressTrigged}>
         { loading &&
-            <Text style={styles.text}>
-                Loading...
-            </Text>
+            <ActivityIndicator color='white' />
         }
         { !loading &&
             <Text style={styles.text}>

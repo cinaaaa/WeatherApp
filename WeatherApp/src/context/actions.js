@@ -10,7 +10,7 @@ export const fetch_weather = (city) => async dispatch => {
     // remove last data
     dispatch(setWeatherData([]));
 
-    
+
     // fetch the city coords first
     // then if we have coords we can fetch
     // the weather data too
@@ -21,9 +21,9 @@ export const fetch_weather = (city) => async dispatch => {
         let weather_data = await get_weathers(lat, lon);
 
         // check for valid weather data
-        if (weather_data?.data?.current) {
+        if (weather_data?.data?.daily) {
             // dispatch our data
-            dispatch(setWeatherData(weather_data?.data?.daily));
+            dispatch(setWeatherData(weather_data.data.daily.slice(0, 4)));
             // hide loading
             dispatch(changeLoading(false));
         };

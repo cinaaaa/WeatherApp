@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         margin: 12,
+        maxHeight: 30
     },
     twoThird: {
         width: '70%',
