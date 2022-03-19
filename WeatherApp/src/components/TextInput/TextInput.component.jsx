@@ -1,25 +1,19 @@
 import React, {useState} from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { StyleSheet, TextInput } from "react-native";
 
 const TextInputComponent = () => {
-  const [text, onChangeText] = useState("Useless Text");
-  const [number, onChangeNumber] = useState(null);
+  const [city, onChangeCity] = useState(null);
 
   return (
-    <SafeAreaView>
+    <>
       <TextInput
         style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
-        placeholder="useless placeholder"
+        onChangeText={onChangeCity}
+        value={city}
+        placeholder="Search for a city..."
         keyboardType="numeric"
       />
-    </SafeAreaView>
+    </>
   );
 };
 
@@ -28,6 +22,8 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
     padding: 10,
   },
 });
