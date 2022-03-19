@@ -1,24 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: 0,
+  weather: [],
+  loading: false,
 }
 
 export const weatherSlice = createSlice({
     name: 'weather',
     initialState,
     reducers: {
-        increment: (state) => {
-        // Redux Toolkit allows us to write "mutating" logic in reducers. It
-        // doesn't actually mutate the state because it uses the Immer library,
-        // which detects changes to a "draft state" and produces a brand new
-        // immutable state based off those changes
-        state.value += 1
+        setWeatherData: (state, action) => {
+          state.weather = action.payload;
+        },
+        changeLoading: (state, action) => {
+          state.loading = action.payload;
         },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment } = weatherSlice.actions;
+export const { setWeatherData, changeLoading } = weatherSlice.actions;
 
 export default weatherSlice.reducer;

@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import { StyleSheet, TextInput } from "react-native";
 
-const TextInputComponent = () => {
-  const [city, onChangeCity] = useState(null);
-
+const TextInputComponent = ({
+  city,
+  onChangeCity
+}) => {
   return (
     <>
       <TextInput
@@ -11,7 +12,6 @@ const TextInputComponent = () => {
         onChangeText={onChangeCity}
         value={city}
         placeholder="Search for a city..."
-        keyboardType="numeric"
       />
     </>
   );

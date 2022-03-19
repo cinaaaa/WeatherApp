@@ -2,12 +2,20 @@ import { StyleSheet,Text,Pressable } from "react-native";
 
 const ButtonComponent = ({
     onPressTrigged,
-    title
+    title,
+    loading
 }) => (
     <Pressable style={styles.button} onPress={onPressTrigged}>
-        <Text style={styles.text}>
-          {title}
-        </Text>
+        { loading &&
+            <Text style={styles.text}>
+                Loading...
+            </Text>
+        }
+        { !loading &&
+            <Text style={styles.text}>
+                {title}
+            </Text>
+        }
     </Pressable>
 );
 
