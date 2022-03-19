@@ -1,10 +1,9 @@
-import { Text } from "react-native"
-import TextInputComponent from "../../components/TextInput/TextInput.component";
+import SearchBarContainer from "../../containers/SearchBar/SearchBar.container";
 
 const HomeContainer = () => {
     return (
         <>
-            <TextInputComponent />
+            <SearchBarContainer />
         </>
     );
 };
