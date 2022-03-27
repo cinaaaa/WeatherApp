@@ -17,7 +17,9 @@ Contains the redux files, store, action and...
 ##### .Api
 apis folder
 
-Pure time spented: 4 hours
+-----
+
+## Pure time spented: 4 hours
 
 #### How to run
 Same as any other expo app
